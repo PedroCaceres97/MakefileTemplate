@@ -1,12 +1,10 @@
 # Makefile Template v0.6
 
-Reusable Makefile template for C projects.
-
-Supports multiple build targets, compiler toolchains, and automatic
-test discovery. Every .c source file inside the `tests/` directory is
-compiled as an independent executable.
+A reusable Makefile template for C projects.
 
 This template separates project configuration from build logic. Most projects only require editing `config.mk`, while the build rules remain in the `Makefile` and the modules under `makefiles/`.
+
+The template supports multiple build targets, multiple compiler toolchains, automatic dependency generation, recursive source discovery, and automatic test discovery.
 
 ## Project Layout
 
@@ -48,14 +46,14 @@ Targets are declared in `config.mk`.
 
 Each target requires:
 
-* Be added in `TARGETS`
-* `[target]_DIR`    Directory containing the source files.
-* `[target]_TYPE`   `executable`, `static` or `shared`.
+* `TARGETS` — Space-separated list of target names.
+* `[target]_DIR` — Directory containing the source files.
+* `[target]_TYPE` — `executable`, `static` or `shared`.
 
 Optional target settings:
 
-* `[target]_LIBS`       
-* `[target]_LIBS_PATH`  
+* `[target]_LIBS`
+* `[target]_LIBS_PATH`
 
 Source files are discovered recursively.
 
@@ -97,26 +95,31 @@ The following variables are available in `config.mk`.
 ```
 make
 ```
+
 Builds every target listed in `TARGETS`.
 
 ```
 make clean
 ```
+
 Removes all generated files.
 
 ```
 make debug
 ```
+
 Builds every target in debug mode.
 
 ```
 make tests
 ```
+
 Builds every test executable.
 
 ```
 make tests-debug
 ```
+
 Builds every test in debug mode.
 
 ---
@@ -170,18 +173,6 @@ Produces `.obj` object files and `.lib` static libraries.
 
 ---
 
-Target library paths should be specified without `-L` or `/LIBPATH:`.
-
----
-
-Additional include directories should be specified through `EXTRA_INCLUDES` instead of adding `-I` or `/I` manually.
-
----
-
-Additional compiler and linker options should be placed in `EXTRA_CFLAGS` and `EXTRA_LDFLAGS` instead of modifying the toolchain files.
-
----
-
 If your tests use a library built by the same project, configure:
 
 ```
@@ -190,6 +181,14 @@ TESTS_LIBS_PATH := lib
 ```
 
 where `<target>` is the name of the static library target.
+
+---
+
+Additional include directories should be specified through `EXTRA_INCLUDES` instead of adding `-I` or `/I` manually.
+
+---
+
+Additional compiler and linker options should be placed in `EXTRA_CFLAGS` and `EXTRA_LDFLAGS` instead of modifying the toolchain files.
 
 ---
 
@@ -216,7 +215,15 @@ The appropriate naming convention is applied automatically by each toolchain.
 
 ---
 
+Target library paths should be specified without `-L` or `/LIBPATH:`.
+
+---
+
 Changing the toolchain does not require modifying the project configuration. Only the command used to invoke `make` changes.
+
+---
+
+When possible, prefer configuring projects through `config.mk` rather than editing the Makefile itself.
 
 ---
 
