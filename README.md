@@ -10,6 +10,7 @@ This template separates project configuration from build logic. Most projects on
 
 ## Project Layout
 
+```
 .
 ├── bin/
 │   └── tests/
@@ -29,14 +30,15 @@ This template separates project configuration from build logic. Most projects on
 ├── tests/
 ├── config.mk
 └── Makefile
+```
 
 Generated directories:
 
-* `bin/`        Executable targets.
-* `bin/tests/`  Test executables.
-* `lib/`        Static libraries.
-* `obj/`        Object and dependency files.
-* `debug/`      Debug build output.
+* `bin/` — Executable targets.
+* `bin/tests/` — Test executables.
+* `lib/` — Static libraries.
+* `obj/` — Object files and dependency files.
+* `debug/` — Debug equivalents of the previous directories.
 
 ---
 
