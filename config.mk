@@ -27,6 +27,7 @@
 #	- ENABLE_LTO: Set to 1 to enable -flto
 #	- ENABLE_SANITIZERS: Set to 1 to enable -fsanitize=address,undefined (undefined is not supported on msvc)
 #	- ENABLE_WARNINGS_AS_ERRORS: Set to 1 to enable -Werror
+#	- DISABLE_DEPRACATED_WARNINGS: Set to 1 to enable -Wno-deprecated-declarations (-D_CRT_SECURE_NO_WARNINGS on msvc)
 #
 # =====================================
 # EDIT AT EASE
@@ -62,3 +63,4 @@ POST_BUILD :=
 ENABLE_LTO := 0
 ENABLE_SANITIZERS := 0
 ENABLE_WARNINGS_AS_ERRORS := 0
+DISABLE_DEPRACATED_WARNINGS := 1

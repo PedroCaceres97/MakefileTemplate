@@ -4,6 +4,7 @@ Update log v0.6:
     - Splitted Makefile into several .mk files in makefiles/
     - Removed Update logs embedded in Makefile
 	- Github repo created
+	- Added DISABLE_DEPRACATED_WARNINGS in config.mk
 
 Update log v0.5:
 	- Changed project layout:

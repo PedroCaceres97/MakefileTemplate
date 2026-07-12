@@ -39,6 +39,10 @@ ifeq ($(ENABLE_SANITIZERS),1)
 	LDFLAGS += -Xlinker /subsystem:console
 endif
 
+ifeq ($(DISABLE_DEPRACATED_WARNINGS),1)
+	CFLAGS += -Wno-deprecated-declarations
+endif
+
 CFLAGS += $(EXTRA_CFLAGS)
 LDFLAGS += $(EXTRA_LDFLAGS)
 CPPFLAGS += $(call expand_includes,$(EXTRA_INCLUDES))
