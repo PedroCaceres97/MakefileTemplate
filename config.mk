@@ -62,6 +62,9 @@
 #   ENABLE_WARNINGS_AS_ERRORS
 #       Treats all compiler warnings as errors.
 #
+#   DISABLE_DEPRACATED_WARNINGS
+#       Disables depracated functions warnings.
+#
 # =====================================
 # EDIT AT EASE
 # =====================================
