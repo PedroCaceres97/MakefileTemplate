@@ -5,6 +5,9 @@ Update log v0.6:
     - Removed Update logs embedded in Makefile
 	- Github repo created
 	- Added DISABLE_DEPRACATED_WARNINGS in config.mk
+	- ENABLE-SANITIZERS forces debug mode
+	- Improved documentation
+	- Added README.md
 
 Update log v0.5:
 	- Changed project layout:
